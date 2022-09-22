@@ -1,4 +1,6 @@
-# Tabulator
+# Tabulator in LWC
+
+http://tabulator.info/
 
 ![Screenshot 2022-09-22 at 15 32 57](https://user-images.githubusercontent.com/73949610/191674873-a72f1491-b168-4c25-8498-0f38251bec95.JPG)
 
