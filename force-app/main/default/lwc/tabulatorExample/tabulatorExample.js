@@ -134,12 +134,8 @@ export default class TabulatorExample extends LightningElement {
                     title: "Rating",
                     field: "rating",
                     hozAlign: "center",
-                    formatter: "traffic",
-                    formatterParams: {
-                        min: 0,
-                        max: 10,
-                        color: ["green", "orange", "red"]
-                    }
+                    formatter: "star",
+                    editor: "star"
                 },
                 { title: "Color", field: "col", width: 130, editor: "input" },
                 { title: "Date Of Birth", field: "dob", width: 130, sorter: "date", hozAlign: "center", editor: "date" },
