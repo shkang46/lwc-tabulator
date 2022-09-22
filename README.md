@@ -1,18 +1,20 @@
-# Salesforce DX Project: Next Steps
+# Tabulator
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+![Screenshot 2022-09-22 at 15 32 57](https://user-images.githubusercontent.com/73949610/191674873-a72f1491-b168-4c25-8498-0f38251bec95.JPG)
 
-## How Do You Plan to Deploy Your Changes?
+## Issue
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+#### Rating 타입에서 svg가 표시되지 않는 문제
+- svg에 대한 viewbox attribute를 만들 때, setAttribute('viewBox', ...)가 attribute name을 lower case로 변환하기 때문에 제대로 인식할 수 없음
+```js
+// 이 코드를
+star.setAttribute("viewBox", "0 0 512 512");
 
-## Configure Your Salesforce DX Project
+// 이렇게 바꿔야함
+const attrNodeViewBox = document.createAttributeNS(null, 'viewBox');
+attrNodeViewBox.value = '0 0 512 512';
+star.setAttributeNodeNS(attrNodeViewBox);
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+// 두 군데 있음
+```
 
-## Read All About It
-
--   [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
--   [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
--   [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
--   [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
