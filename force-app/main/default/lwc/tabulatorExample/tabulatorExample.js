@@ -26,7 +26,7 @@ const tabledata = [
         col: "yellow",
         dob: "31/01/1999"
     },
-    { id: 6, name: "Frank Harbours", progress: 38, gender: "male", rating: 4, col: "red", dob: "12/05/1966", car: 1 }
+    { id: 6, name: "Frank Harbours", progress: 38, gender: "male", rating: 10, col: "red", dob: "12/05/1966", car: 1 }
 ];
 
 /**
@@ -130,7 +130,17 @@ export default class TabulatorExample extends LightningElement {
                     editor: "select",
                     editorParams: { values: ["male", "female"] }
                 },
-                { title: "Rating", field: "rating", formatter: "star", hozAlign: "center", width: 100, editor: true },
+                {
+                    title: "Rating",
+                    field: "rating",
+                    hozAlign: "center",
+                    formatter: "traffic",
+                    formatterParams: {
+                        min: 0,
+                        max: 10,
+                        color: ["green", "orange", "red"]
+                    }
+                },
                 { title: "Color", field: "col", width: 130, editor: "input" },
                 { title: "Date Of Birth", field: "dob", width: 130, sorter: "date", hozAlign: "center", editor: "date" },
                 {
